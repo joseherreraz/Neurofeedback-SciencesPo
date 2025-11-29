@@ -1,136 +1,170 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Neurofeedback & Société – Enquête Sciences Po</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neurofeedback & Société — Sciences Po</title>
 <style>
 body {
-font-family: Arial, sans-serif;
 margin: 0;
-padding: 0;
-background: #f5f6fa;
-color: #2c3e50;
-}
-header {
-background: #1e272e;
+font-family: Arial, sans-serif;
+background-color: #0f0f0f;
 color: white;
-padding: 40px 20px;
+line-height: 1.6;
+}
+
+header {
+background: linear-gradient(135deg, #1c1c1c, #2a2a72);
+padding: 60px 20px;
 text-align: center;
 }
+
+header h1 {
+font-size: 40px;
+margin: 0;
+color: #7dc2ff;
+}
+
+header p {
+font-size: 18px;
+color: #e0e0e0;
+max-width: 700px;
+margin: 10px auto 0;
+}
+
 section {
-padding: 40px 20px;
+padding: 50px 20px;
 max-width: 900px;
 margin: auto;
 }
+
 h2 {
-color: #1e272e;
-border-left: 5px solid #4b7bec;
+color: #7dc2ff;
+border-left: 6px solid #7dc2ff;
 padding-left: 10px;
 }
+
 .video-container {
-display: flex;
-justify-content: center;
-margin: 20px 0;
+position: relative;
+padding-top: 56.25%;
 }
+
+iframe {
+position: absolute;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+border: none;
+}
+
 .team {
-display: flex;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 gap: 20px;
-flex-wrap: wrap;
-justify-content: center;
-}
-.member {
-background: white;
-padding: 15px 20px;
-border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-width: 180px;
 text-align: center;
+margin-top: 30px;
 }
+
+.team div {
+background: #1d1d1d;
+padding: 15px;
+border-radius: 8px;
+border: 1px solid #333;
+}
+
 footer {
 text-align: center;
-padding: 30px;
-background: #1e272e;
-color: white;
+padding: 20px;
+background: #111;
+color: #777;
 margin-top: 40px;
 }
+
 </style>
 </head>
-
 <body>
 
 <header>
 <h1>Neurofeedback & Société</h1>
-<p>Projet réalisé dans le cadre du cours <strong>La Vie Sociale des Données (Sciences Po)</strong></p>
+<p>Enquête réalisée dans le cadre du cours <em>La Vie Sociale des Données</em> (Sciences Po).</p>
 </header>
 
 <section>
-<h2>Qu'est-ce que le neurofeedback ?</h2>
+<h2>Qu’est-ce que le neurofeedback&nbsp;?</h2>
 <p>
-Le neurofeedback est une technique qui consiste à mesurer l’activité cérébrale
-(ondes EEG) à l’aide de capteurs posés sur le cuir chevelu, puis à fournir un
-retour en temps réel – visuel ou sonore – pour aider l’utilisateur à moduler
-ses états mentaux (attention, relaxation, concentration).
+Le neurofeedback est une technique qui consiste à mesurer l’activité électrique du cerveau
+(via EEG) et à fournir à l’utilisateur un retour immédiat — visuel ou sonore — afin de l’aider
+à moduler volontairement certaines ondes cérébrales.
+</p>
+<p>
+Aujourd’hui, cette technologie circule entre deux mondes distincts :
+<strong>le marché du bien-être</strong> et <strong>la recherche scientifique</strong>.
+Notre enquête analyse comment un même dispositif produit des usages, des discours et des formes
+de légitimité très différentes selon son contexte.
 </p>
 
 <div class="video-container">
-<video width="500" controls>
-<source src="https://neurodivergence.fr/wp-content/uploads/2023/09/Neurofeedback-Dynamique.mp4" type="video/mp4">
-Votre navigateur ne supporte pas la vidéo.
-</video>
+<iframe src="https://www.youtube.com/embed/EmspOE7H4pM" allowfullscreen></iframe>
 </div>
 </section>
 
-<section>
-<h2>Notre démarche d’enquête</h2>
-<p>
-Nous avons analysé le neurofeedback comme un dispositif de quantification qui
-produit des données, des catégories et des visualisations du cerveau.
-Notre enquête repose sur deux entretiens :
-</p>
 
+<section>
+<h2>Notre démarche</h2>
+<p>
+Nous avons mené deux entretiens semi-directifs avec&nbsp;:
+</p>
 <ul>
-<li><strong>David Douçot</strong> – formateur et représentant NeurOptimal (vision commerciale & bien-être)</li>
-<li><strong>Margaux Izac</strong> – doctorante travaillant sur l’usage du NF dans la performance sportive</li>
+<li><strong>David Douçot</strong>, formateur commercial vendant des séances de neurofeedback NeurOptimal®.</li>
+<li><strong>Margaux Izac</strong>, doctorante utilisant le neurofeedback dans un cadre scientifique pour la performance sportive.</li>
 </ul>
 
 <p>
-Ces deux mondes – commercial et scientifique – nous ont permis de comprendre
-comment un même outil peut produire des usages très différents, selon la manière
-dont les données sont interprétées.
+Cette comparaison nous a permis de comprendre comment les données, les capteurs et les
+visualisations produites par le dispositif prennent des significations différentes selon
+le contexte d’usage.
 </p>
 </section>
+
 
 <section>
 <h2>Principaux résultats</h2>
-<p><strong>1. Dans le marché commercial</strong>, le NF est présenté comme un outil de bien-être, simple, accessible, souvent sans protocole scientifique clair.</p>
-<p><strong>2. Dans la recherche scientifique</strong>, le NF repose sur une rigueur méthodologique : protocoles contrôlés, zones EEG précises, validation empirique.</p>
-<p><strong>3. Une tension centrale :</strong> l’opacité des données commerciales contraste avec la transparence nécessaire à la science.</p>
-</section>
 
-<section>
-<h2>Notre conclusion</h2>
+<h3>1. Deux mondes, deux logiques</h3>
 <p>
-Le neurofeedback n’est pas seulement une technologie : c’est un dispositif social qui
-produit des réalités différentes selon les contextes où il circule.
-Notre enquête nous a appris que la donnée n’est jamais neutre — elle façonne les usages,
-les attentes et les croyances autour d’un outil.
+Dans le <strong>marché commercial</strong>, le neurofeedback est présenté comme un outil de bien-être,
+souvent opaque sur la nature réelle des données. L’efficacité repose davantage sur le
+storytelling que sur la validation scientifique.
+</p>
+
+<p>
+Dans le <strong>milieu scientifique</strong>, il s’agit d’un outil de mesure nécessitant des protocoles
+rigoureux, des groupes de contrôle et une interprétation prudente des signaux EEG.
+</p>
+
+<h3>2. La donnée n’est jamais neutre</h3>
+<p>
+En mobilisant les travaux de Desrosières et Martin, nous avons observé que le neurofeedback
+fabrique des catégories, des indicateurs et des “scores” qui orientent la manière dont les
+utilisateurs perçoivent leur cerveau et leur performance.
 </p>
 </section>
 
+
 <section>
-<h2>Équipe</h2>
+<h2>À propos de nous</h2>
 <div class="team">
-<div class="member">Anna Anzalone</div>
-<div class="member">Hippolyte Aubertin</div>
-<div class="member">Elzelina Beylot</div>
-<div class="member">José Luis Herrera Sáenz</div>
-<div class="member">Rossella Stasolla</div>
+<div>Hippolyte</div>
+<div>Elzelina</div>
+<div>Anna</div>
+<div>Rossella</div>
+<div>José Luis</div>
 </div>
 </section>
 
+
 <footer>
-© 2025 – Projet étudiant Sciences Po
+Projet réalisé à Sciences Po — 2025
 </footer>
 
 </body>
