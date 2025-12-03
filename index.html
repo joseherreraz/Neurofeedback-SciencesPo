@@ -7,268 +7,675 @@
 
   <style>
     :root {
-      --bg-dark: #050816;
-      --bg-card: #0b1020;
-      --accent: #37b3ff;
-      --accent-soft: #1b3b77;
+      --bg-body: #030616;
+      --bg-hero: radial-gradient(circle at top left, #1b3a6b, #050816 60%);
+      --bg-card: rgba(8, 14, 40, 0.96);
+      --bg-nav: rgba(5, 8, 22, 0.9);
+      --border-soft: rgba(110, 170, 255, 0.4);
+      --accent: #46c2ff;
+      --accent-soft: #1c3d72;
+      --accent-strong: #7df1ff;
       --text-main: #f5f7ff;
-      --text-muted: #c2c7dd;
+      --text-muted: #c1c6dd;
+      --shadow-strong: 0 22px 40px rgba(0, 0, 0, 0.8);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
 
     body {
       background: radial-gradient(circle at top, #151c3b, #050816 55%);
       color: var(--text-main);
-      font-family: system-ui, sans-serif;
-      scroll-behavior: smooth;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* NAVIGATION */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAV STICKY ---------------------------------------------------------- */
+
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
-      background: rgba(5, 8, 22, 0.85);
-      border-bottom: 1px solid rgba(120,205,255,0.15);
-      padding: 10px 20px;
+      backdrop-filter: blur(14px);
+      background: var(--bg-nav);
+      border-bottom: 1px solid rgba(120, 205, 255, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
     }
 
-    nav ul {
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .nav-brand {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-strong);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #8bf0ff, #2f8dff);
+      box-shadow: 0 0 14px rgba(82, 205, 255, 0.9);
+    }
+
+    .nav-links {
       list-style: none;
       display: flex;
-      justify-content: center;
-      gap: 28px;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: flex-end;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+    .nav-links a {
+      font-size: 0.83rem;
       text-transform: uppercase;
-      transition: 0.2s;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    .nav-links a:hover {
+      color: var(--accent-strong);
+      border-color: rgba(120, 205, 255, 0.4);
+      background: rgba(20, 40, 90, 0.7);
     }
 
-    /* LAYOUT */
-    main { max-width: 1080px; margin: auto; padding: 24px; }
+    /* LAYOUT ------------------------------------------------------------- */
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 26px 18px 50px;
+    }
 
     section {
-      background: rgba(7, 11, 30, 0.96);
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(65,115,185,0.45);
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 22px 22px 24px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(65, 115, 185, 0.55);
+      box-shadow: var(--shadow-strong);
     }
 
-    h2 { font-size: 1.35rem; margin-bottom: 10px; }
-    h3 { color:#a6d4ff; margin: 10px 0 5px; }
+    section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
 
-    p, ul { color: var(--text-muted); }
+    section h3 {
+      font-size: 1.05rem;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      color: #a6d4ff;
+    }
+
+    p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    li + li {
+      margin-top: 3px;
+    }
+
+    /* HERO --------------------------------------------------------------- */
+
+    header.hero {
+      background: var(--bg-hero);
+      border-radius: 22px;
+      padding: 30px 26px 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 22px;
+      align-items: center;
+      border: 1px solid rgba(111, 190, 255, 0.4);
+      box-shadow: var(--shadow-strong);
+      margin-bottom: 30px;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-tag span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #8bf0ff, #2f8dff);
+      box-shadow: 0 0 12px rgba(82, 205, 255, 0.9);
+    }
+
+    header.hero h1 {
+      font-size: 1.9rem;
+      margin-bottom: 8px;
+    }
+
+    header.hero p.lead {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 0.85rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #37b3ff, #68e3ff);
+      color: #02101c;
+      font-weight: 600;
+      box-shadow: 0 15px 30px rgba(55, 179, 255, 0.5);
+    }
+
+    .btn-ghost {
+      background: rgba(5, 14, 32, 0.7);
+      border-color: rgba(168, 191, 255, 0.3);
+      color: var(--text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      justify-self: center;
+    }
+
+    .hero-chip {
+      background: rgba(9, 17, 42, 0.9);
+      border-radius: 20px;
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      border: 1px solid rgba(92, 182, 255, 0.55);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      max-width: 250px;
+    }
+
+    .hero-chip strong {
+      color: #9ce1ff;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: -6px -30px auto auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 1px dashed rgba(111, 190, 255, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.85;
+    }
+
+    .hero-orbit span {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #8be4ff, #3056ff);
+      box-shadow: 0 0 25px rgba(120, 205, 255, 0.9);
+    }
+
+    /* GRID & CARDS ------------------------------------------------------- */
 
     .two-cols {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 18px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(55, 179, 255, 0.1);
+      border: 1px solid rgba(120, 205, 255, 0.5);
+      color: #9ce1ff;
+      margin-bottom: 4px;
+    }
+
+    .image-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .image-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(80, 132, 210, 0.6);
+      background: #050816;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.7);
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-card span {
+      display: block;
+      padding: 6px 9px 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .image-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.85);
+      border-color: rgba(130, 215, 255, 0.9);
+    }
+
+    /* VIDEO CARD --------------------------------------------------------- */
+
+    .video-card {
+      background: rgba(8, 15, 40, 0.97);
+      border-radius: 16px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(92, 182, 255, 0.55);
+      margin-top: 12px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.75);
     }
 
     .video-wrapper {
       position: relative;
-      padding-bottom: 56%;
+      padding-bottom: 56.25%;
       height: 0;
-    }
-    .video-wrapper iframe {
-      position: absolute; width: 100%; height: 100%; border: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(86, 148, 238, 0.6);
+      background: #000;
     }
 
-    footer { text-align: center; color:#8ca0d0; font-size: 0.85rem; padding: 15px 0; }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8893c4;
+      margin-top: 8px;
+      padding-bottom: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      header.hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      main {
+        padding: 18px 14px 40px;
+      }
+      .two-cols {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <ul>
-    <li><a href="#definition">Dispositif</a></li>
-    <li><a href="#video">Séance</a></li>
-    <li><a href="#demarche">Méthodologie</a></li>
-    <li><a href="#resultats">Données</a></li>
-    <li><a href="#biblio">Bibliographie</a></li>
-    <li><a href="#equipe">Équipe</a></li>
-  </ul>
-</nav>
+  <!-- NAVIGATION STICKY -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="nav-dot"></span>
+        Neurofeedback & Société – Sciences Po
+      </div>
+      <ul class="nav-links">
+        <li><a href="#definition">Dispositif</a></li>
+        <li><a href="#video">Séance</a></li>
+        <li><a href="#demarche">Méthodologie</a></li>
+        <li><a href="#resultats">Données</a></li>
+        <li><a href="#biblio">Bibliographie</a></li>
+        <li><a href="#equipe">Équipe</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<main>
+  <main>
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div>
+        <div class="hero-tag">
+          <span class="dot"></span>
+          <span>Projet de groupe – Sciences Po</span>
+        </div>
+        <h1>Neurofeedback & quantification du cerveau</h1>
+        <p class="lead">
+          Une enquête menée dans le cadre du cours <em>La Vie Sociale des Données</em>,
+          sur la façon dont une même technologie EEG circule entre
+          <strong>le marché du bien-être</strong> et
+          <strong>la recherche scientifique sur la performance sportive</strong>.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#definition">Comprendre le dispositif</a>
+          <a class="btn btn-ghost" href="#resultats">Ce que nous apprennent les données</a>
+        </div>
+      </div>
 
-<!-- HERO -->
-<header class="hero" style="background:#0b1020; padding:25px; border-radius:18px; margin-bottom:25px;">
-  <h1>Neurofeedback & quantification du cerveau</h1>
-  <p class="lead">
-    Une enquête menée dans le cadre du cours <em>La Vie Sociale des Données</em> (Sciences Po Paris),
-    portant sur la circulation d’une même technologie EEG entre :  
-    <strong>le marché du bien-être</strong> et <strong>la recherche scientifique</strong>.
-  </p>
-</header>
+      <div class="hero-visual">
+        <div class="hero-chip">
+          <strong>Neurofeedback = dispositif de quantification</strong>
+          Captation d’ondes cérébrales, traduction en indicateurs,
+          retour visuel ou sonore immédiat&nbsp;: une véritable «&nbsp;boîte noire&nbsp;»
+          de données sur le cerveau.
+        </div>
+        <div class="hero-orbit">
+          <span></span>
+        </div>
+      </div>
+    </header>
 
-<!-- SECTION 1 : DEFINITON -->
-<section id="definition">
-  <h2>Qu’est-ce que le neurofeedback ?</h2>
+    <!-- SECTION 1 : QU’EST-CE QUE LE NF ? -->
+    <section id="definition">
+      <h2>Qu’est-ce que le neurofeedback&nbsp;?</h2>
 
-  <div class="two-cols">
-    <div>
+      <div class="two-cols">
+        <div>
+          <p>
+            Le neurofeedback consiste à mesurer l’activité électrique du cerveau (EEG)
+            et à renvoyer à l’utilisateur un feedback visuel ou sonore
+            lui permettant de moduler volontairement certaines ondes cérébrales.
+          </p>
+          <p>
+            Les signaux EEG bruts sont filtrés, puis traduits en indicateurs simplifiés&nbsp;:
+            <strong>scores, barres, sons, animations</strong>.
+            C’est cette opération de traduction qui en fait un
+            <strong>système de quantification</strong>&nbsp;: on ne voit pas «&nbsp;le cerveau&nbsp;»
+            directement, mais un cerveau déjà reconstruit par des choix techniques.
+          </p>
+          <h3>Comment ça marche&nbsp;?</h3>
+          <ul>
+            <li>mesure en temps réel de l’activité cérébrale ;</li>
+            <li>transformation des signaux en catégories (alpha, bêta, etc.) ;</li>
+            <li>retour immédiat sous forme visuelle ou sonore ;</li>
+            <li>apprentissage par essai-erreur pour stabiliser un état cible.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>À quoi sert-il&nbsp;?</h3>
+          <ul>
+            <li>réduction du stress et du rythme cardiaque ;</li>
+            <li>amélioration du contrôle émotionnel ;</li>
+            <li>optimisation de la précision et de la coordination motrice ;</li>
+            <li>accompagnement de certaines pathologies (Parkinson, TDAH, etc.).</li>
+          </ul>
+          <p>
+            Mais la littérature scientifique souligne des
+            <strong>résultats encore controversés</strong>&nbsp;:
+            protocoles hétérogènes, tailles d’échantillons limitées,
+            difficultés à isoler l’effet spécifique du neurofeedback.
+          </p>
+        </div>
+      </div>
+
+      <!-- IMAGES : CASQUE + SCHÉMA -->
+      <div class="image-row">
+        <figure class="image-card">
+          <img src="images/casque-neurofeedback.jpg" alt="Casque de neurofeedback porté par une participante" />
+          <span>Casque de neurofeedback utilisé dans les études de performance.</span>
+        </figure>
+        <figure class="image-card">
+          <img src="images/schema-neurofeedback.jpg" alt="Schéma du circuit standard de neurofeedback" />
+          <span>Schéma standard&nbsp;: du signal EEG au feedback audio-visuel.</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : VIDEO -->
+    <section id="video">
+      <h2>À quoi ressemble une séance&nbsp;?</h2>
       <p>
-        Le neurofeedback consiste à mesurer l’activité électrique du cerveau (EEG)
-        et à renvoyer à l’utilisateur un feedback visuel ou sonore
-        permettant de moduler volontairement certaines ondes cérébrales.
+        Pour visualiser concrètement le dispositif, voici un exemple de séance de neurofeedback&nbsp;:
+        on observe la chaîne complète&nbsp;: captation des signaux, traitement logiciel,
+        puis traduction en feedback que la personne doit apprendre à contrôler.
       </p>
+
+      <div class="video-card">
+        <p><strong>Exemple de séance de neurofeedback</strong></p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/Y90Lk9f_Vcw"
+            title="Séance de neurofeedback"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : MÉTHODOLOGIE -->
+    <section id="demarche">
+      <h2>Notre démarche d’enquête</h2>
       <p>
-        Les signaux EEG sont filtrés et traduits en indicateurs simplifiés :
-        <strong>scores, barres, sons, animations</strong>.
-        C’est cette opération de traduction qui en fait un véritable
-        <strong>système de quantification</strong>.
+        Pour comprendre le <strong>fonctionnement social</strong> du neurofeedback,
+        nous avons mené deux entretiens semi-directifs dans des contextes très contrastés.
       </p>
-      <h3>Comment ça marche ?</h3>
-      <ul>
-        <li>Mesure de l’activité cérébrale en temps réel</li>
-        <li>Transformation des signaux en catégories (alpha, bêta…)</li>
-        <li>Renvoi immédiat d’un feedback visuel/sonore</li>
-      </ul>
-    </div>
 
-    <div>
-      <h3>Applications possibles</h3>
+      <div class="two-cols">
+        <div>
+          <h3>1. Pratique commerciale du bien-être cérébral</h3>
+          <span class="pill">Cabinet privé &amp; formations payantes</span>
+          <p>
+            Un entrepreneur propose des séances et formations de neurofeedback,
+            destinées à un public large (stress, sommeil, développement personnel).
+            Le dispositif est présenté comme une
+            <strong>«&nbsp;solution naturelle&nbsp;»</strong> pour aller mieux, avec&nbsp;:
+          </p>
+          <ul>
+            <li>peu d’explications sur les ondes réellement mesurées ;</li>
+            <li>des indicateurs simplifiés servant de «&nbsp;preuves&nbsp;» visuelles ;</li>
+            <li>une forte opacité sur la gestion et la conservation des données.</li>
+          </ul>
+          <p>
+            Ici, la quantification du cerveau devient surtout un
+            <strong>argument marketing</strong>.
+          </p>
+        </div>
+
+        <div>
+          <h3>2. Pratique scientifique en STAPS et neurosciences</h3>
+          <span class="pill">Laboratoire universitaire &amp; sport de haut niveau</span>
+          <p>
+            Une doctorante utilise le neurofeedback dans un protocole expérimental
+            pour améliorer la performance d’athlètes (imagerie kinesthésique,
+            précision, coordination).
+          </p>
+          <ul>
+            <li>groupes contrôle et critères d’inclusion stricts ;</li>
+            <li>protocoles standardisés et répétés ;</li>
+            <li>évaluation statistique des effets (ou de leur absence).</li>
+          </ul>
+          <p>
+            La question centrale devient&nbsp;: «&nbsp;Est-ce que cette quantification
+            produit une amélioration objectivable&nbsp;?&nbsp;» et non simplement
+            «&nbsp;Est-ce que les participants se sentent mieux&nbsp;?&nbsp;».
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : DEUX MONDES, UN DISPOSITIF -->
+    <section id="resultats">
+      <h2>Deux mondes, un même dispositif</h2>
+
+      <div class="two-cols">
+        <div>
+          <h3>Sur le marché du bien-être</h3>
+          <span class="pill">Promesse de changement rapide</span>
+          <ul>
+            <li>discours centrés sur l’amélioration du bien-être et de la performance personnelle ;</li>
+            <li>visualisations simplifiées (courbes, avant/après, scores) ;</li>
+            <li>zone grise sur le stockage, la durée de conservation et la réutilisation des données.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Dans la recherche scientifique</h3>
+          <span class="pill">Outil prometteur mais encore immature</span>
+          <ul>
+            <li>résultats parfois contradictoires dans les méta-analyses ;</li>
+            <li>problèmes de standardisation des protocoles ;</li>
+            <li>limites des électrodes de surface, qui ne captent pas les zones profondes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IMAGES : BIEN-ÊTRE vs LABO -->
+      <div class="image-row">
+        <figure class="image-card">
+          <img src="images/centre-bien-etre.jpg" alt="Séance de neurofeedback dans un centre de bien-être" />
+          <span>Centre de bien-être utilisant le neurofeedback comme outil de relaxation.</span>
+        </figure>
+        <figure class="image-card">
+          <img src="images/lab-eeg.jpg" alt="Séance EEG dans un laboratoire de recherche" />
+          <span>Contexte de laboratoire&nbsp;: protocole contrôlé et collecte systématique des données.</span>
+        </figure>
+      </div>
+
+      <h3 style="margin-top: 18px;">Ce que nous retenons pour le cours</h3>
       <ul>
-        <li>Réduction du stress</li>
-        <li>Amélioration du contrôle émotionnel</li>
-        <li>Précision et coordination motrice</li>
-        <li>Accompagnement de pathologies (Parkinson)</li>
+        <li>
+          Un même dispositif de mesure peut produire des
+          <strong>réalités différentes</strong> selon les mondes où il circule
+          (bien-être, sport de haut niveau, clinique).
+        </li>
+        <li>
+          Les catégories, seuils et indicateurs sont des
+          <strong>conventions</strong> plus que des reflets immédiats du cerveau.
+        </li>
+        <li>
+          L’<strong>opacité</strong> des algorithmes et des traitements favorise
+          la marchandisation des données et rend difficile leur appropriation critique
+          par les usagers.
+        </li>
       </ul>
+    </section>
+
+    <!-- SECTION 5 : BIBLIOGRAPHIE -->
+    <section id="biblio">
+      <h2>Bibliographie</h2>
+      <ul>
+        <li>
+          Corrado, S. et al. (2024). <em>Improving Mental Skills in Precision Sports by Using Neurofeedback Training: A Narrative Review</em>.
+        </li>
+        <li>
+          Marzbani, H., Marateb, H. &amp; Mansourian, M. (2016).
+          <em>Neurofeedback: A Comprehensive Review on System Design, Methodology and Clinical Applications</em>.
+        </li>
+        <li>
+          Rydzik, Ł. et al. (2023).
+          <em>The Use of Neurofeedback in Sports Training: Systematic Review</em>.
+        </li>
+        <li>
+          Xiang, M.-Q. et al. (2018).
+          <em>The Effect of Neurofeedback Training for Sport Performance in Athletes: A Meta-Analysis</em>.
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION 6 : ÉQUIPE -->
+    <section id="equipe">
+      <h2>À propos de nous</h2>
       <p>
-        Mais les résultats restent <strong>controversés</strong> :
-        protocoles variables, résultats non reproductibles,
-        difficulté à isoler l’effet réel du neurofeedback.
+        Ce site a été réalisé dans le cadre du cours
+        <em>La Vie Sociale des Données</em> (Sciences Po Paris). Il présente une
+        enquête collective sur les usages du neurofeedback comme dispositif de
+        quantification du cerveau.
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 2 : VIDEO -->
-<section id="video">
-  <h2>À quoi ressemble une séance ?</h2>
-  <p>Voici un exemple typique d’une séance de neurofeedback utilisée en démonstration :</p>
-
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/Y90Lk9f_Vcw" allowfullscreen></iframe>
-  </div>
-</section>
-
-<!-- SECTION 3 : MÉTHODOLOGIE -->
-<section id="demarche">
-  <h2>Notre démarche d’enquête</h2>
-
-  <p>
-    Pour comprendre le fonctionnement social du neurofeedback,
-    nous avons mené deux entretiens contrastés :
-  </p>
-
-  <div class="two-cols">
-    <div>
-      <h3>1. Pratique commerciale (bien-être)</h3>
-      <p>
-        Un entrepreneur propose des séances et formations de neurofeedback,
-        présentées comme des solutions rapides pour le stress et le bien-être.
-      </p>
+      <h3>Équipe du projet</h3>
       <ul>
-        <li>peu d’explications techniques</li>
-        <li>indicateurs simplifiés → “preuve visuelle”</li>
-        <li>opacité sur les données collectées</li>
+        <li>Elzelina Beylot</li>
+        <li>Anna Anzalone</li>
+        <li>Rossella Stasolla</li>
+        <li>Hippolyte Aubertin</li>
+        <li>José Luis Herrera Saenz</li>
       </ul>
-    </div>
+    </section>
 
-    <div>
-      <h3>2. Pratique scientifique (université)</h3>
-      <p>
-        Une doctorante en STAPS utilise le neurofeedback
-        dans des protocoles rigoureux pour la performance sportive.
-      </p>
-      <ul>
-        <li>protocole standardisé</li>
-        <li>groupes contrôle</li>
-        <li>question centrale : efficacité mesurable ?</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 4 : DEUX MONDES -->
-<section id="resultats">
-  <h2>Deux mondes, un même dispositif</h2>
-
-  <div class="two-cols">
-    <div>
-      <h3>Sur le marché du bien-être</h3>
-      <ul>
-        <li>Discours de promesse (“aller mieux rapidement”)</li>
-        <li>Données simplifiées et visuelles</li>
-        <li>Zone grise sur le stockage et l’usage des données</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Dans la recherche scientifique</h3>
-      <ul>
-        <li>Technologie encore immature</li>
-        <li>Besoins de protocoles standardisés</li>
-        <li>Résultats parfois contradictoires</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3>Ce que nous retenons du cours</h3>
-  <ul>
-    <li>Un même instrument → des réalités différentes</li>
-    <li>Les catégories et indicateurs sont des conventions</li>
-    <li>L’opacité favorise la marchandisation</li>
-  </ul>
-</section>
-
-<!-- SECTION 5 : BIBLIOGRAPHIE -->
-<section id="biblio">
-  <h2>Bibliographie</h2>
-
-  <ul>
-    <li>Corrado et al. (2024). <em>Improving Mental Skills in Precision Sports using Neurofeedback</em>.</li>
-    <li>Marzbani, Marateb & Mansourian (2016). <em>Neurofeedback: System Design and Clinical Applications</em>.</li>
-    <li>Rydzik et al. (2023). <em>The Use of Neurofeedback in Sports Training</em>.</li>
-    <li>Xiang et al. (2018). <em>The Effect of Neurofeedback Training on Sport Performance</em>.</li>
-  </ul>
-</section>
-
-<!-- SECTION 6 : EQUIPE -->
-<section id="equipe">
-  <h2>À propos de nous</h2>
-  <p>Projet réalisé dans le cadre du cours *La Vie Sociale des Données* (Sciences Po).</p>
-
-  <ul>
-    <li>Elzelina Beylot</li>
-    <li>Anna Anzalone</li>
-    <li>Rossella Stasolla</li>
-    <li>Hippolyte Aubertin</li>
-    <li>José Luis Herrera Saenz</li>
-  </ul>
-</section>
-
-</main>
-
-<footer>
-  Neurofeedback & Société – Projet étudiant, Sciences Po Paris (2025)
-</footer>
-
+    <footer>
+      Neurofeedback &amp; Société – Projet étudiant, Sciences Po Paris, 2025.
+    </footer>
+  </main>
 </body>
 </html>
