@@ -15,339 +15,260 @@
       --text-muted: #c2c7dd;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: radial-gradient(circle at top, #151c3b, #050816 55%);
       color: var(--text-main);
-      line-height: 1.6;
+      font-family: system-ui, sans-serif;
       scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
-    /* ---------------- NAVIGATION STICKY ---------------- */
+    /* NAVIGATION */
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
       background: rgba(5, 8, 22, 0.85);
-      border-bottom: 1px solid rgba(120, 205, 255, 0.15);
+      border-bottom: 1px solid rgba(120,205,255,0.15);
       padding: 10px 20px;
     }
+
     nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
       gap: 28px;
-      list-style: none;
     }
+
     nav a {
+      text-decoration: none;
       color: var(--text-muted);
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 6px 8px;
-      border-radius: 8px;
       transition: 0.2s;
     }
+
     nav a:hover {
       color: var(--accent);
-      background: rgba(55, 179, 255, 0.1);
     }
 
-    /* ---------------- HERO ---------------- */
-    main {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+    /* LAYOUT */
+    main { max-width: 1080px; margin: auto; padding: 24px; }
 
-    header.hero {
-      background: radial-gradient(circle at top left, #1b345e, #050816 55%);
-      border-radius: 20px;
-      padding: 32px 28px;
-      display: grid;
-      gap: 20px;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      align-items: center;
-      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(111, 190, 255, 0.15);
-      margin-bottom: 32px;
-    }
-
-    header.hero h1 {
-      font-size: 1.9rem;
-      margin-bottom: 8px;
-    }
-
-    header.hero p.lead {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .tag span.dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: radial-gradient(circle, #8be4ff, #37b3ff);
-      box-shadow: 0 0 12px rgba(55, 179, 255, 0.75);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 0.85rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(120deg, #37b3ff, #68e3ff);
-      color: #02101c;
-      font-weight: 600;
-      box-shadow: 0 15px 30px rgba(55, 179, 255, 0.5);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(55, 179, 255, 0.65);
-    }
-
-    .btn-ghost {
-      background: rgba(5, 14, 32, 0.7);
-      border-color: rgba(168, 191, 255, 0.3);
-      color: var(--text-muted);
-    }
-    .btn-ghost:hover {
-      background: rgba(5, 14, 32, 0.9);
-      color: #fff;
-    }
-
-    /* SECTIONS */
     section {
-      margin-bottom: 40px;
       background: rgba(7, 11, 30, 0.96);
-      border-radius: 18px;
-      padding: 22px 20px 24px;
-      border: 1px solid rgba(65, 115, 185, 0.55);
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.65);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(65,115,185,0.45);
     }
 
-    /* Jeeps your section styling as-is... */
-    /* (I keep everything below unchanged to avoid blowing up the code) */
+    h2 { font-size: 1.35rem; margin-bottom: 10px; }
+    h3 { color:#a6d4ff; margin: 10px 0 5px; }
 
-    section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-    section h3 {
-      font-size: 1.05rem;
-      margin-top: 12px;
-      margin-bottom: 6px;
-      color: #a6d4ff;
-    }
-    p {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    ul {
-      margin-left: 18px;
-      margin-bottom: 6px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-    li+li {
-      margin-top: 3px;
-    }
+    p, ul { color: var(--text-muted); }
+
     .two-cols {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: 1.2fr 1fr;
       gap: 18px;
-      margin-top: 10px;
-    }
-    .pill {
-      display: inline-block;
-      font-size: 0.78rem;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: rgba(55, 179, 255, 0.1);
-      border: 1px solid rgba(120, 205, 255, 0.5);
-      color: #9ce1ff;
-      margin-bottom: 4px;
-    }
-    .context-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-      margin-bottom: 6px;
-    }
-    .context-badges span {
-      font-size: 0.75rem;
-      padding: 3px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(90, 132, 210, 0.7);
-      color: #c6d5ff;
-      background: rgba(12, 17, 43, 0.9);
     }
 
-    /* VIDEO */
-    .video-card {
-      background: rgba(8, 15, 40, 0.95);
-      border-radius: 16px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(92, 182, 255, 0.5);
-      margin-top: 12px;
-    }
     .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 56%;
       height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid rgba(86, 148, 238, 0.6);
-      background: #000;
     }
     .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+      position: absolute; width: 100%; height: 100%; border: 0;
     }
 
-    .image-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .image-card {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(80, 132, 210, 0.6);
-      background: #050816;
-    }
-    .image-card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #7d86af;
-      margin-top: 10px;
-      padding-bottom: 15px;
-    }
-
-    @media (max-width: 780px) {
-      nav ul {
-        gap: 16px;
-        font-size: 0.75rem;
-      }
-      header.hero {
-        grid-template-columns: 1fr;
-      }
-      .two-cols {
-        grid-template-columns: 1fr;
-      }
-      main {
-        padding: 18px 14px 40px;
-      }
-    }
+    footer { text-align: center; color:#8ca0d0; font-size: 0.85rem; padding: 15px 0; }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔵 NAVIGATION -->
-  <nav>
-    <ul>
-      <li><a href="#definition">Dispositif</a></li>
-      <li><a href="#video">Séance</a></li>
-      <li><a href="#demarche">Méthodologie</a></li>
-      <li><a href="#resultats">Données & Analyse</a></li>
-      <li><a href="#equipe">Équipe</a></li>
-    </ul>
-  </nav>
+<!-- NAVIGATION -->
+<nav>
+  <ul>
+    <li><a href="#definition">Dispositif</a></li>
+    <li><a href="#video">Séance</a></li>
+    <li><a href="#demarche">Méthodologie</a></li>
+    <li><a href="#resultats">Données</a></li>
+    <li><a href="#biblio">Bibliographie</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+  </ul>
+</nav>
 
-  <main>
+<main>
 
-    <!-- 🟦 HERO -->
-    <header class="hero" id="top">
-      <div>
-        <div class="tag">
-          <span class="dot"></span>
-          <span>Projet de groupe – Sciences Po</span>
-        </div>
-        <h1>Neurofeedback & quantification du cerveau</h1>
-        <p class="lead">
-          Une enquête sur la façon dont une même technologie EEG circule entre deux mondes :
-          le marché du bien-être et la recherche scientifique sur la performance sportive.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#definition">Comprendre le dispositif</a>
-          <a class="btn btn-ghost" href="#resultats">Ce que nous apprennent les données</a>
-        </div>
-      </div>
+<!-- HERO -->
+<header class="hero" style="background:#0b1020; padding:25px; border-radius:18px; margin-bottom:25px;">
+  <h1>Neurofeedback & quantification du cerveau</h1>
+  <p class="lead">
+    Une enquête menée dans le cadre du cours <em>La Vie Sociale des Données</em> (Sciences Po Paris),
+    portant sur la circulation d’une même technologie EEG entre :  
+    <strong>le marché du bien-être</strong> et <strong>la recherche scientifique</strong>.
+  </p>
+</header>
 
-      <div class="hero-visual">
-        <div class="hero-chip">
-          <strong>Neurofeedback = dispositif de quantification</strong>
-          Captation d’ondes cérébrales → traitement logiciel → feedback.
-          Une véritable « boîte noire » de données sur le cerveau.
-        </div>
-        <div class="hero-orbit"><span></span></div>
-      </div>
-    </header>
+<!-- SECTION 1 : DEFINITON -->
+<section id="definition">
+  <h2>Qu’est-ce que le neurofeedback ?</h2>
 
-    <!-- (⚠️ TON CONTENU EXISTANT EST ENSUITE REPRIS À L’IDENTIQUE) -->
-    <!-- JE NE LE RÉÉCRIS PAS ICI POUR GAGNER DE LA PLACE MAIS IL RESTE LE MÊME -->
-    <!-- COPIE TOUT TON HTML DES SECTIONS EXACTEMENT COMME TU L’AS → JUSTE EN DESSOUS -->
+  <div class="two-cols">
+    <div>
+      <p>
+        Le neurofeedback consiste à mesurer l’activité électrique du cerveau (EEG)
+        et à renvoyer à l’utilisateur un feedback visuel ou sonore
+        permettant de moduler volontairement certaines ondes cérébrales.
+      </p>
+      <p>
+        Les signaux EEG sont filtrés et traduits en indicateurs simplifiés :
+        <strong>scores, barres, sons, animations</strong>.
+        C’est cette opération de traduction qui en fait un véritable
+        <strong>système de quantification</strong>.
+      </p>
+      <h3>Comment ça marche ?</h3>
+      <ul>
+        <li>Mesure de l’activité cérébrale en temps réel</li>
+        <li>Transformation des signaux en catégories (alpha, bêta…)</li>
+        <li>Renvoi immédiat d’un feedback visuel/sonore</li>
+      </ul>
+    </div>
 
-    <!-- 🔽🔽🔽 COLLE ICI **TES SECTIONS** SANS RIEN CHANGER 🔽🔽🔽 -->
-    <!-- SECTION "Qu’est-ce que le NF ?" … -->
-    <!-- SECTION "À quoi ressemble une séance ?" … -->
-    <!-- SECTION "Notre démarche d’enquête" … -->
-    <!-- SECTION "Deux mondes" … -->
-    <!-- SECTION "Équipe" … -->
+    <div>
+      <h3>Applications possibles</h3>
+      <ul>
+        <li>Réduction du stress</li>
+        <li>Amélioration du contrôle émotionnel</li>
+        <li>Précision et coordination motrice</li>
+        <li>Accompagnement de pathologies (Parkinson)</li>
+      </ul>
+      <p>
+        Mais les résultats restent <strong>controversés</strong> :
+        protocoles variables, résultats non reproductibles,
+        difficulté à isoler l’effet réel du neurofeedback.
+      </p>
+    </div>
+  </div>
+</section>
 
+<!-- SECTION 2 : VIDEO -->
+<section id="video">
+  <h2>À quoi ressemble une séance ?</h2>
+  <p>Voici un exemple typique d’une séance de neurofeedback utilisée en démonstration :</p>
 
-  </main>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/Y90Lk9f_Vcw" allowfullscreen></iframe>
+  </div>
+</section>
 
-  <footer>
-    Neurofeedback & Société – Projet étudiant, Sciences Po Paris, 2025.
-  </footer>
+<!-- SECTION 3 : MÉTHODOLOGIE -->
+<section id="demarche">
+  <h2>Notre démarche d’enquête</h2>
+
+  <p>
+    Pour comprendre le fonctionnement social du neurofeedback,
+    nous avons mené deux entretiens contrastés :
+  </p>
+
+  <div class="two-cols">
+    <div>
+      <h3>1. Pratique commerciale (bien-être)</h3>
+      <p>
+        Un entrepreneur propose des séances et formations de neurofeedback,
+        présentées comme des solutions rapides pour le stress et le bien-être.
+      </p>
+      <ul>
+        <li>peu d’explications techniques</li>
+        <li>indicateurs simplifiés → “preuve visuelle”</li>
+        <li>opacité sur les données collectées</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>2. Pratique scientifique (université)</h3>
+      <p>
+        Une doctorante en STAPS utilise le neurofeedback
+        dans des protocoles rigoureux pour la performance sportive.
+      </p>
+      <ul>
+        <li>protocole standardisé</li>
+        <li>groupes contrôle</li>
+        <li>question centrale : efficacité mesurable ?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : DEUX MONDES -->
+<section id="resultats">
+  <h2>Deux mondes, un même dispositif</h2>
+
+  <div class="two-cols">
+    <div>
+      <h3>Sur le marché du bien-être</h3>
+      <ul>
+        <li>Discours de promesse (“aller mieux rapidement”)</li>
+        <li>Données simplifiées et visuelles</li>
+        <li>Zone grise sur le stockage et l’usage des données</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Dans la recherche scientifique</h3>
+      <ul>
+        <li>Technologie encore immature</li>
+        <li>Besoins de protocoles standardisés</li>
+        <li>Résultats parfois contradictoires</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Ce que nous retenons du cours</h3>
+  <ul>
+    <li>Un même instrument → des réalités différentes</li>
+    <li>Les catégories et indicateurs sont des conventions</li>
+    <li>L’opacité favorise la marchandisation</li>
+  </ul>
+</section>
+
+<!-- SECTION 5 : BIBLIOGRAPHIE -->
+<section id="biblio">
+  <h2>Bibliographie</h2>
+
+  <ul>
+    <li>Corrado et al. (2024). <em>Improving Mental Skills in Precision Sports using Neurofeedback</em>.</li>
+    <li>Marzbani, Marateb & Mansourian (2016). <em>Neurofeedback: System Design and Clinical Applications</em>.</li>
+    <li>Rydzik et al. (2023). <em>The Use of Neurofeedback in Sports Training</em>.</li>
+    <li>Xiang et al. (2018). <em>The Effect of Neurofeedback Training on Sport Performance</em>.</li>
+  </ul>
+</section>
+
+<!-- SECTION 6 : EQUIPE -->
+<section id="equipe">
+  <h2>À propos de nous</h2>
+  <p>Projet réalisé dans le cadre du cours *La Vie Sociale des Données* (Sciences Po).</p>
+
+  <ul>
+    <li>Elzelina Beylot</li>
+    <li>Anna Anzalone</li>
+    <li>Rossella Stasolla</li>
+    <li>Hippolyte Aubertin</li>
+    <li>José Luis Herrera Saenz</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  Neurofeedback & Société – Projet étudiant, Sciences Po Paris (2025)
+</footer>
 
 </body>
 </html>
