@@ -313,9 +313,13 @@
 
     .image-card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;               /* → la imagen se ajusta sin recortarse */
+  object-fit: contain;        /* → muestra la imagen completa */
   display: block;
+  background-color: #000814;  /* opcional: evita huecos feos alrededor */
+  padding: 6px;               /* opcional: da un marco más elegante */
+  border-radius: 10px;
+}
 }
 
     .image-card span {
