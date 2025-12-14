@@ -450,6 +450,42 @@
   background: radial-gradient(circle, #7de0ff, #2d4dff);
   box-shadow: 0 0 10px rgba(115,190,255,0.8);
 }
+    .enquetes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.enquete-card {
+  background: rgba(8, 14, 40, 0.95);
+  border: 1px solid rgba(120, 205, 255, 0.35);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+}
+
+.enquete-card h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #a6d4ff;
+}
+
+.enquete-card ul {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+.enquete-card li {
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+@media (max-width: 780px) {
+  .enquetes-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -642,35 +678,35 @@
     </li>
   </ul>
 
-  <h3>Nos enquêtés</h3>
-  <p>
-    Ces axes ont été mobilisés dans deux contextes d’enquête contrastés,
-    permettant de comparer les usages et les formes de légitimation du neurofeedback.
-  </p>
+<h3>Nos enquêtés</h3>
+<p>
+  Ces axes ont été mobilisés dans deux contextes d’enquête contrastés,
+  permettant de comparer les usages et les formes de légitimation du neurofeedback.
+</p>
 
-  <div class="enquetes-grid">
+<div class="enquetes-grid">
 
-    <div class="enquete-card">
-      <h4>Pratique commerciale du bien-être cérébral</h4>
-      <span class="pill">Cabinet privé &amp; formations payantes</span>
-      <ul>
-        <li>un acteur du marché du bien-être proposant des séances et formations de neurofeedback ;</li>
-        <li>un public large (stress, sommeil, développement personnel) ;</li>
-        <li>une présentation du dispositif comme « solution naturelle » d’amélioration du bien-être.</li>
-      </ul>
-    </div>
+  <div class="enquete-card">
+    <h4>Pratique commerciale du bien-être cérébral</h4>
+    <span class="pill">Cabinet privé &amp; formations payantes</span>
+    <ul>
+      <li>un acteur du marché du bien-être proposant des séances et formations de neurofeedback ;</li>
+      <li>un public large (stress, sommeil, développement personnel) ;</li>
+      <li>une présentation du dispositif comme « solution naturelle » d’amélioration du bien-être.</li>
+    </ul>
+  </div>
 
-    <div class="enquete-card">
-      <h4>Pratique scientifique dans la recherche académique</h4>
-      <span class="pill">Laboratoire universitaire</span>
-      <ul>
-        <li>une doctorante en sciences cognitives utilisant le neurofeedback dans un protocole expérimental ;</li>
-        <li>une logique de contrôle, de standardisation et de validation scientifique ;</li>
-        <li>une attention portée à l’objectivation des effets et à leurs limites.</li>
-      </ul>
-    </div>
+  <div class="enquete-card">
+    <h4>Pratique scientifique dans la recherche académique</h4>
+    <span class="pill">Laboratoire universitaire</span>
+    <ul>
+      <li>une doctorante en sciences cognitives utilisant le neurofeedback dans un protocole expérimental ;</li>
+      <li>une logique de contrôle, de standardisation et de validation scientifique ;</li>
+      <li>une attention portée à l’objectivation des effets et à leurs limites.</li>
+    </ul>
+  </div>
 
-  </div>  
+</div>
 </section>
 
     <!-- SECTION 4 : DEUX MONDES, UN DISPOSITIF -->
@@ -718,7 +754,7 @@
         l’athlète ne sait pas ce qui se passe dans sa tête
         ni s’il active les zones cérébrales utiles pour des gains moteurs. »
         <br>
-        <span style="color:#9ce1ff;">— Entretien, doctorante en STAPS (anonymisée)</span>
+        <span style="color:#9ce1ff;">— Entretien, doctorante en sciences cognitives (anonymisée)</span>
       </p>
     </div>
 
